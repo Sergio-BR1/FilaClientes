@@ -15,7 +15,8 @@ void insere(int &inicio, int &fim, cliente *fila) {
 		fim = prov;
 		senha = rand()%10000;
 		std::cout << "Insira o nome do cliente" << std::endl;
-		std::cin >> fila[fim].nome;
+		std::cin.ignore();
+		std::getline(std::cin,fila[fim].nome);
 		fila[fim].senha = senha;
 		std::cout << "Senha: " << senha << std::endl;
 		if (inicio == -1)
